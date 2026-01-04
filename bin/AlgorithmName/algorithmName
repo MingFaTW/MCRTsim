@@ -1,0 +1,4 @@
+PartitionAlgorithm,SBP,FF,BF,WFD,WF,FFD,None,BFD
+DVFSMethod,MaxSpeed,BS,BTS,BATS,DUAL,None,CSMS
+SchedulingAlgorithm,OPA,LST,GRMS,GDMS,GEDF,PFCFS,PLST,PDMS,PEDF,RMS,FCFS,SMC,DMS,Response-Time_Analysis_for_Mixed_Criticality_Systems 2,EDF,PRMS
+CCProtocol,PIP,MrsP,NPCS,P_FMLP,SRP,MSRP,None,G_FMLP,DPCP,PCP

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workload baseSpeed="1000" numResource="1" numTask="3">
+    <resources ID="1" quantity="1"/>
+    
+    <!-- 設定優先級 -->;
+    <task ID="1" criticalityLevel="1">
+        <criticalityLevel value="1">
+            <arrivalTime>0.0</arrivalTime>
+            <period>32</period>
+            <relativeDeadline>32</relativeDeadline>
+            <computationAmount>7</computationAmount>
+        </criticalityLevel>
+        <criticalityLevel value="2">
+            <arrivalTime>0.0</arrivalTime>
+            <period>14</period>
+            <relativeDeadline>14</relativeDeadline>
+            <computationAmount>14</computationAmount>
+        </criticalityLevel>
+    </task>
+
+    <task ID="2" criticalityLevel="1">
+         <criticalityLevel value="1">
+            <arrivalTime>0.0</arrivalTime>
+            <period>9</period>
+            <relativeDeadline>9</relativeDeadline>
+            <computationAmount>2</computationAmount>
+        </criticalityLevel>
+        <criticalityLevel value="2">
+            <arrivalTime>0.0</arrivalTime>
+            <period>9</period>
+            <relativeDeadline>9</relativeDeadline>
+            <computationAmount>2</computationAmount>
+        </criticalityLevel>
+    </task>
+
+    <task ID="3" criticalityLevel="1">
+        <criticalityLevel value="1">
+            <arrivalTime>0.0</arrivalTime>
+            <period>49</period>
+            <relativeDeadline>49</relativeDeadline>
+            <computationAmount>19</computationAmount>
+        </criticalityLevel>
+        <criticalityLevel value="2">
+            <arrivalTime>0.0</arrivalTime>
+            <period>49</period>
+            <relativeDeadline>49</relativeDeadline>
+            <computationAmount>19</computationAmount>
+        </criticalityLevel>
+    </task>
+</workload>

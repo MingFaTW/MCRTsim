@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<workload baseSpeed="1000" numResource="1" numTask="3">
+    <resources ID="1" quantity="1"/>
+    
+    <task ID="1" priorityLevel="1">
+        <priorityLevel value="1">
+            <arrivalTime>0.0</arrivalTime>
+            <period>32</period>
+            <relativeDeadline>32</relativeDeadline>
+            <computationAmount>7</computationAmount>
+        </priorityLevel>
+        <priorityLevel value="2">
+            <arrivalTime>0.0</arrivalTime>
+            <period>14</period>
+            <relativeDeadline>14</relativeDeadline>
+            <computationAmount>7</computationAmount>
+        </priorityLevel>
+    </task>
+
+    <task ID="2" priorityLevel="2">
+         <priorityLevel value="1">
+            <arrivalTime>0.0</arrivalTime>
+            <period>9</period>
+            <relativeDeadline>9</relativeDeadline>
+            <computationAmount>2</computationAmount>
+        </priorityLevel>
+        <priorityLevel value="2">
+            <arrivalTime>0.0</arrivalTime>
+            <period>9</period>
+            <relativeDeadline>9</relativeDeadline>
+            <computationAmount>2</computationAmount>
+        </priorityLevel>
+    </task>
+
+    <task ID="3" priorityLevel="1">
+        <priorityLevel value="1">
+            <arrivalTime>0.0</arrivalTime>
+            <period>49</period>
+            <relativeDeadline>49</relativeDeadline>
+            <computationAmount>19</computationAmount>
+        </priorityLevel>
+        <priorityLevel value="2">
+            <arrivalTime>0.0</arrivalTime>
+            <period>49</period>
+            <relativeDeadline>49</relativeDeadline>
+            <computationAmount>19</computationAmount>
+        </priorityLevel>
+    </task>
+</workload>

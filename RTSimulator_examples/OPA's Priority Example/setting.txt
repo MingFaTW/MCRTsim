@@ -1,0 +1,4 @@
+Partition Algorithm: None
+DVFS Method: None
+Scheduling Algorithm: OPA
+Synchronization Protocol: None
