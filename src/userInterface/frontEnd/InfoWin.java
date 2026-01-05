@@ -286,7 +286,7 @@ public class InfoWin extends JPanel
     public void pressDrawButton()
     {
         this.timeLineBtn.setForeground(Color.red);
-        this.ds = parent.getSimulationViewer().getDataReader().getDataSetting();
+        this.ds = parent.getSimulationViewer().getDataSetting();
         this.tabbedPane.removeAll();
         this.curResultViewer = null;
         this.timeLineBtn.setEnabled(false);

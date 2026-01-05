@@ -1,0 +1,133 @@
+{
+  "workload": "workload",
+  "maximumUtilization": 0.0,
+  "actualUtilization": 0.0,
+  "maximumCriticalSectionRatio": 0.0,
+  "actualCriticalSectionRatio": 0.0,
+  "taskNumber": 5,
+  "resourcesNumber": 6,
+  "baseSpeed": 1000,
+  "resources": [
+    {
+      "ID": 1,
+      "quantity": 1
+    },
+    {
+      "ID": 2,
+      "quantity": 1
+    },
+    {
+      "ID": 3,
+      "quantity": 1
+    },
+    {
+      "ID": 4,
+      "quantity": 1
+    },
+    {
+      "ID": 5,
+      "quantity": 1
+    },
+    {
+      "ID": 6,
+      "quantity": 1
+    }
+  ],
+  "tasks": [
+    {
+      "ID": 1,
+      "type": "periodic",
+      "arrivalTime": 0,
+      "period": 23.0,
+      "relativeDeadline": 23,
+      "computationAmount": 3.5,
+      "criticalSections": [
+        {
+          "resourceID": 1,
+          "startTime": 0.5,
+          "endTime": 2.5
+        },
+        {
+          "resourceID": 2,
+          "startTime": 1.5,
+          "endTime": 2.0
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "type": "periodic",
+      "arrivalTime": 0,
+      "period": 22.0,
+      "relativeDeadline": 22,
+      "computationAmount": 6.5,
+      "criticalSections": [
+        {
+          "resourceID": 6,
+          "startTime": 0.5,
+          "endTime": 3.5
+        },
+        {
+          "resourceID": 2,
+          "startTime": 1.0,
+          "endTime": 2.0
+        },
+        {
+          "resourceID": 3,
+          "startTime": 3.5,
+          "endTime": 5.5
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "type": "periodic",
+      "arrivalTime": 1.5,
+      "period": 19.5,
+      "relativeDeadline": 19.5,
+      "computationAmount": 2.5,
+      "criticalSections": [
+        {
+          "resourceID": 6,
+          "startTime": 2,
+          "endTime": 2.5
+        }
+      ]
+    },
+    {
+      "ID": 4,
+      "type": "periodic",
+      "arrivalTime": 4,
+      "period": 16,
+      "relativeDeadline": 16,
+      "computationAmount": 5,
+      "criticalSections": [
+        {
+          "resourceID": 6,
+          "startTime": 1,
+          "endTime": 3.5
+        },
+        {
+          "resourceID": 4,
+          "startTime": 1.5,
+          "endTime": 2.5
+        }
+      ]
+    },
+    {
+      "ID": 5,
+      "type": "periodic",
+      "arrivalTime": 4,
+      "period": 16,
+      "relativeDeadline": 16,
+      "computationAmount": 3,
+      "criticalSections": [
+        {
+          "resourceID": 5,
+          "startTime": 1,
+          "endTime": 2
+        }
+      ]
+    }
+  ]
+}

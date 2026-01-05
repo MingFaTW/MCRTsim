@@ -1,0 +1,74 @@
+{
+  "workload": "workload",
+  "maximumUtilization": 0.0,
+  "actualUtilization": 0.0,
+  "maximumCriticalSectionRatio": 0.0,
+  "actualCriticalSectionRatio": 0.0,
+  "taskNumber": 3,
+  "resourcesNumber": 2,
+  "baseSpeed": 1000,
+  "resources": [
+    {
+      "ID": 1,
+      "quantity": 1
+    },
+    {
+      "ID": 2,
+      "quantity": 1
+    }
+  ],
+  "tasks": [
+    {
+      "ID": 1,
+      "arrivalTime": 0.0,
+      "period": 7,
+      "relativeDeadline": 7,
+      "computationAmount": 2,
+      "criticalSections": [
+        {
+          "resourceID": 1,
+          "startTime": 0.5,
+          "endTime": 1
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "arrivalTime": 4,
+      "period": 14,
+      "relativeDeadline": 14,
+      "computationAmount": 3,
+      "criticalSections": [
+        {
+          "resourceID": 1,
+          "startTime": 1.6,
+          "endTime": 2.5
+        },
+        {
+          "resourceID": 2,
+          "startTime": 1.7,
+          "endTime": 2.2
+        },
+        {
+          "resourceID": 2,
+          "startTime": 1,
+          "endTime": 1.5
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "arrivalTime": 0.0,
+      "period": 15,
+      "relativeDeadline": 15,
+      "computationAmount": 4,
+      "criticalSections": [
+        {
+          "resourceID": 2,
+          "startTime": 1.5,
+          "endTime": 3
+        }
+      ]
+    }
+  ]
+}

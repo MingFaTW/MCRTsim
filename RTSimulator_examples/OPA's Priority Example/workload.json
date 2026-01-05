@@ -1,0 +1,78 @@
+{
+  "workload": "workload",
+  "maximumUtilization": 0.0,
+  "actualUtilization": 0.0,
+  "maximumCriticalSectionRatio": 0.0,
+  "actualCriticalSectionRatio": 0.0,
+  "taskNumber": 3,
+  "resourcesNumber": 1,
+  "baseSpeed": 1000,
+  "resources": [
+    {
+      "ID": 1,
+      "quantity": 1
+    }
+  ],
+  "tasks": [
+    {
+      "ID": 1,
+      "priorityLevel": "1",
+      "priorityLevels": [
+        {
+          "value": "1",
+          "arrivalTime": 0.0,
+          "period": 32,
+          "relativeDeadline": 32,
+          "computationAmount": 7
+        },
+        {
+          "value": "2",
+          "arrivalTime": 0.0,
+          "period": 14,
+          "relativeDeadline": 14,
+          "computationAmount": 7
+        }
+      ]
+    },
+    {
+      "ID": 2,
+      "priorityLevel": "2",
+      "priorityLevels": [
+        {
+          "value": "1",
+          "arrivalTime": 0.0,
+          "period": 9,
+          "relativeDeadline": 9,
+          "computationAmount": 2
+        },
+        {
+          "value": "2",
+          "arrivalTime": 0.0,
+          "period": 9,
+          "relativeDeadline": 9,
+          "computationAmount": 2
+        }
+      ]
+    },
+    {
+      "ID": 3,
+      "priorityLevel": "1",
+      "priorityLevels": [
+        {
+          "value": "1",
+          "arrivalTime": 0.0,
+          "period": 49,
+          "relativeDeadline": 49,
+          "computationAmount": 19
+        },
+        {
+          "value": "2",
+          "arrivalTime": 0.0,
+          "period": 49,
+          "relativeDeadline": 49,
+          "computationAmount": 19
+        }
+      ]
+    }
+  ]
+}

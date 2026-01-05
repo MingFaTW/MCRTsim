@@ -41,6 +41,7 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import schedulingAlgorithm.PriorityDrivenSchedulingAlgorithm;
 import SystemEnvironment.DataReader;
+import SystemEnvironment.JSONDataReader;
 import SystemEnvironment.Simulator;
 import WorkLoad.Task;
 import WorkLoadSet.DataSetting;
@@ -115,6 +116,7 @@ public class SimulationViewer extends JPanel
     private ButtonGroup simTimeBG;
     private JRadioButton lcmRB, customRB;
     private DataReader dr;
+    private DataSetting currentDataSetting;  // 儲存當前載入的資料設定
     private Simulator sim;
     private SimulationResultPopupWin experimentResultPopupWin;
     private ScriptSetter scriptSetter;
@@ -232,24 +234,40 @@ public class SimulationViewer extends JPanel
                     {
                         setMagnificationFactor(accuracyField.getText());
                         
-                        dr = new DataReader();
-                        dr.loadSource(workloadTextField.getText());
-                        dr.loadSource(processorTextField.getText());
+                        // 根據檔案副檔名自動選擇讀取器
+                        String workloadPath = workloadTextField.getText();
+                        String processorPath = processorTextField.getText();
+                        
+                        if (workloadPath.toLowerCase().endsWith(".json") || processorPath.toLowerCase().endsWith(".json")) {
+                            // 使用 JSON 讀取器
+                            JSONDataReader jsonReader = new JSONDataReader();
+                            jsonReader.loadSource(workloadPath);
+                            jsonReader.loadSource(processorPath);
+                            currentDataSetting = jsonReader.getDataSetting();
+                            dr = null;  // JSON 讀取時 dr 設為 null
+                        } else {
+                            // 使用 XML 讀取器
+                            dr = new DataReader();
+                            dr.loadSource(workloadPath);
+                            dr.loadSource(processorPath);
+                            currentDataSetting = dr.getDataSetting();
+                        }
+                        
 //                        sim = new Simulator(SimulationViewer.this);
                         sim = new Simulator();
                         sim.setSimulationTime(getSimulationTime());
                         sim.setContextSwitchTime(getContextSwitchTime());
                         sim.setMigrationTime(getMigrationTime());
-                        sim.loadDataSetting(dr.getDataSetting());
+                        sim.loadDataSetting(currentDataSetting);
                         
                         sim.getProcessor().setSchedAlgorithm(getPrioritySchedulingAlgorithm(schedulingComboBox.getSelectedItem().toString()));
                         sim.getProcessor().setPartitionAlgorithm(getPartitionAlgorithm(partitionComboBox.getSelectedItem().toString()));
                         sim.getProcessor().setCCProtocol(getConcurrencyControlProtocol(CCPComboBox.getSelectedItem().toString()));
                         sim.getProcessor().setDVFSMethod(getDynamicVoltageScalingMethod(DVFSComboBox.getSelectedItem().toString()));
                         
-                        dr.getDataSetting().getProcessor().showInfo();
-                        println("Workload:" + dr.getDataSetting().getTaskSet().getProcessingSpeed());
-                        for(Task t : dr.getDataSetting().getTaskSet())
+                        currentDataSetting.getProcessor().showInfo();
+                        println("Workload:" + currentDataSetting.getTaskSet().getProcessingSpeed());
+                        for(Task t : currentDataSetting.getTaskSet())
                         {
                             t.showInfo();
                         }
@@ -738,6 +756,17 @@ public class SimulationViewer extends JPanel
     }
     
     /**
+     * Return the current DataSetting loaded by this SimulationViewer.
+     * This works for both XML and JSON files.
+     *
+     * @return the current DataSetting instance
+     */
+    public DataSetting getDataSetting()
+    {
+        return this.currentDataSetting;
+    }
+    
+    /**
      * Return the list of file base names (no extension) located in the given
      * directory path.
      * <p>
@@ -865,7 +894,7 @@ public class SimulationViewer extends JPanel
     {
         if(this.lcmRB.isSelected())
         {
-            return this.dr.getDataSetting().getTaskSet().getScheduleTimeForTaskSet();
+            return this.currentDataSetting.getTaskSet().getScheduleTimeForTaskSet();
         }
         else if(this.customRB.isSelected())
         {

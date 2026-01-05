@@ -1,0 +1,61 @@
+{
+  "model": "Marvel XScale PXA270",
+  "DVFStype": "per-core",
+  "cores": [
+    {
+      "quantity": 2,
+      "type": "nonIdeal",
+      "availableSpeeds": [
+        {
+          "speed": "1000",
+          "powerConsumption": 1520.08
+        },
+        {
+          "speed": "900",
+          "powerConsumption": 1108.16
+        },
+        {
+          "speed": "800",
+          "powerConsumption": 778.32
+        },
+        {
+          "speed": "700",
+          "powerConsumption": 521.44
+        },
+        {
+          "speed": "600",
+          "powerConsumption": 328.4
+        },
+        {
+          "speed": "500",
+          "powerConsumption": 190.08
+        },
+        {
+          "speed": "400",
+          "powerConsumption": 97.36
+        },
+        {
+          "speed": "300",
+          "powerConsumption": 41.12
+        },
+        {
+          "speed": "200",
+          "powerConsumption": 12.24
+        },
+        {
+          "speed": "100",
+          "powerConsumption": 1.6
+        },
+        {
+          "speed": "idle",
+          "powerConsumption": 0
+        }
+      ],
+      "powerConsumptionFunction": {
+        "alpha": 0.0,
+        "beta": 0.0,
+        "gamma": 0.0
+      }
+    }
+  ]
+}

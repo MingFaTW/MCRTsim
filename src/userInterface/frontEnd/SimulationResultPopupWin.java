@@ -190,12 +190,12 @@ public class SimulationResultPopupWin extends JFrame
         {
             RTSimulatorMath math = new RTSimulatorMath();
         
-            TaskSet ts = this.parent.getDataReader().getDataSetting().getTaskSet();
+            TaskSet ts = this.parent.getDataSetting().getTaskSet();
         
             simulationTime.setText(""+math.changeDecimalFormat((double)this.parent.getSimulationTime()/magnificationFactor));
-            coreCount.setText(""+this.parent.getDataReader().getDataSetting().getProcessor().getAllCore().size());
+            coreCount.setText(""+this.parent.getDataSetting().getProcessor().getAllCore().size());
             taskCount.setText(""+ts.size());
-            resourceCount.setText(""+this.parent.getDataReader().getDataSetting().getSharedResourceSet().size());
+            resourceCount.setText(""+this.parent.getDataSetting().getSharedResourceSet().size());
             totalUtilization.setText("" + math.changeDecimalFormatFor5(ts.getTotalUtilization()));
             patitionMethod.setText(""+this.parent.getPartitionComboBox().getSelectedItem().toString());
             DVFSMethod.setText(""+this.parent.getDVFSComboBox().getSelectedItem().toString());
@@ -204,11 +204,11 @@ public class SimulationResultPopupWin extends JFrame
             
             jobCompeletedCount.setText(""+ts.getTotalJobCompletedNumber()+"/"+ts.getTotalJobNumber());
             jobMissDeadlineCount.setText(""+ts.getTotalJobMissDeadlineNumber()+"/"+ts.getTotalJobNumber());
-            energyConsumption.setText(""+math.changeDecimalFormatFor5(this.parent.getDataReader().getDataSetting().getProcessor().getTotalPowerConsumption()/magnificationFactor) + " (mW)");
-            averageEnergyConsumption.setText(""+math.changeDecimalFormatFor5(((this.parent.getDataReader().getDataSetting().getProcessor().getTotalPowerConsumption()/magnificationFactor)
+            energyConsumption.setText(""+math.changeDecimalFormatFor5(this.parent.getDataSetting().getProcessor().getTotalPowerConsumption()/magnificationFactor) + " (mW)");
+            averageEnergyConsumption.setText(""+math.changeDecimalFormatFor5(((this.parent.getDataSetting().getProcessor().getTotalPowerConsumption()/magnificationFactor)
                                                     /((double)this.parent.getSimulationTime()/magnificationFactor)))+" (mW)");
-            averagePendingTime.setText(""+math.changeDecimalFormatFor5(this.parent.getDataReader().getDataSetting().getTaskSet().getAveragePendingTimeOfTask()));
-            averageResponseTime.setText(""+math.changeDecimalFormatFor5(this.parent.getDataReader().getDataSetting().getTaskSet().getAverageResponseTimeOfTask()));
+            averagePendingTime.setText(""+math.changeDecimalFormatFor5(this.parent.getDataSetting().getTaskSet().getAveragePendingTimeOfTask()));
+            averageResponseTime.setText(""+math.changeDecimalFormatFor5(this.parent.getDataSetting().getTaskSet().getAverageResponseTimeOfTask()));
         }
         catch (Exception ex) 
         {
